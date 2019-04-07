@@ -73,7 +73,7 @@
 				<span style="color:red; font-weight:bold">
 				Aluno não encontrado. Número de verificação inválido.
 				</span>
-				`):void(vt(b)?d.innerHTML=`
+				`):void(vt(a,b)?d.innerHTML=`
 				<br><br>
 				<span style="font-weight:bold">
 				O aluno(a) ${a} está <span style="color:green;"> matriculado e ativo </span> na universidade UNIP. Para concluir a consulta, verifique se o RA correspondente ao documento impresso é igual a <span style="color:blue;">  ${c} </span>.
@@ -83,7 +83,7 @@
 				<span style="color:red; font-weight:bold">
 				O Sr(a). ${a} não é estudante da universidade UNIP. Número de verificação inválido.
 				</span>
-				`)}function gh(a){let b="";b+=0==a.length%2?"D":"N";let c=2326*a.length;return 9999<c&&1e5>c?b+=c+"-":(c=1e3*a.length,b+=c+"-"),b+=a.split(" ").length,b}function vt(a){try{let b=atob(a);return("D"==b[0]||"N"==b[0])&&8==b.length&&"-"==b[6]?1:0}catch(a){return 0}}
+				`)}function gh(a){let b="";b+=0==a.length%2?"D":"N";let c=2326*a.length;return 9999<c&&1e5>c?b+=c+"-":(c=1e3*a.length,b+=c+"-"),b+=a.split(" ").length,b}function vt(a,b){try{let c=atob(b);return("D"==c[0]||"N"==c[0])&&8==c.length&&"-"==c[6]&&c[7]==a.split(" ").length?1:0}catch(a){return 0}}
 </script>
 </body>
 </html>
