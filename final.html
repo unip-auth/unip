@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UNIP - Auth</title>
+</head>
+<body>
+
+
+
+<body bgcolor="#ffffff" leftmargin="0" marginheight="0" marginwidth="0" topmargin="0" valign="top">
+
+
+
+
+	<img src="http://sec.unip.br/img/toponovo.jpg"><table border="0" cellspacing="0" cellpadding="0">
+	<tbody><tr><td width="180">
+		<img src="http://sec.unip.br/img/banner_left_top.jpg">
+		<img src="http://sec.unip.br/img/banner_aa.gif">
+	</td>
+	<td valign="top" align="left">
+	<table width="620" border="0" cellspacing="0" cellpadding="0">
+			<tbody><tr>
+				<td rowspan="3" valign="top">
+<form method="post" action="./Verificacao.aspx" id="form" onsubmit="return ValidaLogin();">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTc3MTM0MzA2M2RkBFEBb7uaxDIhTejEMW3LKcct6HFiXAqCOxOiaPKt0Mo=">
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="73CBC0EA">
+</div>
+
+						<table border="0" cellspacing="0" cellpadding="0">
+							<tbody><tr>
+								<td colspan="3" valign="top"><img src="http://sec.unip.br/img/secretaria_top.gif" alt="" width="520" height="39" border="0"><br></td>
+							</tr>
+							<tr>
+								<td width="15" valign="top"><img src="http://sec.unip.br/img/secretaria_top2.gif" alt="" width="15" height="98" border="0"></td>
+								<td class="geral">Aqui você verifica os documentos impressos através da Secretaria Online Unip. Informe o número de matrícula (RA) do aluno, o codigo de imagem que aparece ao lado e o número constante do documento para verificação.<br>
+									<p></p>
+
+								</td>
+								<td class="geral" width="60%">
+                                    
+
+								<table border="0">
+								<tbody><tr><td class="geral">Nome Completo:</td>
+									<td><input name="ra_name" type="text" id="ra_name" border="0" style="BORDER-RIGHT: #889494 1px solid; PADDING-RIGHT: 1px; BORDER-TOP: #889494 1px solid; PADDING-LEFT: 1px; FONT-SIZE: 12px; PADDING-BOTTOM: 1px; BORDER-LEFT: #889494 1px solid; WIDTH: 100px; HEIGHT: 20px;  COLOR: #707a7a; PADDING-TOP: 1px; BORDER-BOTTOM: #889494 1px solid; BACKGROUND-COLOR: #ffffff" size="20"></td>
+									<td rowspan="4" width="300" align="center">
+</td>
+									</tr>
+								<tr>
+								<td class="geral">Número de Verificação:</td>
+									<td><input name="nr_doc" type="text" id="nr_doc" size="20" maxlength="15" border="0" style="BORDER-RIGHT: #889494 1px solid; PADDING-RIGHT: 1px; BORDER-TOP: #889494 1px solid; PADDING-LEFT: 1px; FONT-SIZE: 12px; PADDING-BOTTOM: 1px; BORDER-LEFT: #889494 1px solid; WIDTH: 100px;HEIGHT: 20px; COLOR: #707a7a; PADDING-TOP: 1px; BORDER-BOTTOM: #889494 1px ,solid; BACKGROUND-COLOR: #ffffff"></td>
+									</tr>
+									<tr>
+									<td colspan="2"><br>
+                                        <input type="button" name="btnEntrar" value="Verificar" id="btnEntrar" class="botao" onclick="vxunip()"></td>
+									</tr>
+									</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody></table>
+</form>
+
+
+<div id="result">
+
+</div>
+
+				</b></b></b></td>
+			</tr>
+		</tbody></table>
+		
+	</td>
+	</tr>
+	</tbody></table>
+
+	<div style="position:absolute;left:70px;top:10px;"><img src="http://sec.unip.br/logos/UNIP.jpg"></div>
+
+
+
+
+<script type="text/javascript">
+	function vxunip(){let a=document.getElementById("ra_name").value,b=document.getElementById("nr_doc").value,c=gh(a),d=document.getElementById("result");return""==a?void(d.innerHTML=`
+				<br><br>
+				<span style="color:red; font-weight:bold">
+				Aluno não encontrado. Número de verificação inválido.
+				</span>
+				`):void(vt(b)?d.innerHTML=`
+				<br><br>
+				<span style="font-weight:bold">
+				O aluno(a) ${a} está <span style="color:green;"> matriculado e ativo </span> na universidade UNIP. Para concluir a consulta, verifique se o RA correspondente ao documento impresso é igual a <span style="color:blue;">  ${c} </span>.
+				</span>
+				`:d.innerHTML=`
+				<br><br>
+				<span style="color:red; font-weight:bold">
+				O Sr(a). ${a} não é estudante da universidade UNIP. Número de verificação inválido.
+				</span>
+				`)}function gh(a){let b="";b+=0==a.length%2?"D":"N";let c=2326*a.length;return 9999<c&&1e5>c?b+=c+"-":(c=1e3*a.length,b+=c+"-"),b+=a.split(" ").length,b}function vt(a){try{let b=atob(a);return("D"==b[0]||"N"==b[0])&&8==b.length&&"-"==b[6]?1:0}catch(a){return 0}}
+</script>
+
+</body>
+</html>
